@@ -1,0 +1,57 @@
+body
+  margin: 0px;
+  padding: 0px;
+  background: #333;
+
+.container
+  width: 1200px;
+  margin: 20px auto;
+  columns: 4;
+  column-gap: 40px;
+
+.container .box
+  width: 100%;
+  margin: 0 0 20px;
+  padding: 10px;
+  background: #fff;
+  overflow: hidden;
+  break-inside: avoid;
+  border-radius: 20px;
+
+.box
+  transition: all 0.3s ease-in-out 0.1s;
+
+.box:hover
+  transform: scale(1.05);
+  transition: all 0.3s ease-in-out 0.1s;
+  cursor: pointer;
+  box-shadow: 0 8px 6px -6px #a51832;
+
+
+.container .box img
+  max-width: 100%;
+  border-radius: 20px
+
+.container .box h2
+  margin: 10px 0 0;
+  padding: 0;
+  font-size: 20px;
+
+.container .box p
+  margin: 0;
+  padding: 0 0 10px;
+  font-size: 16px;
+
+@media (max-width: 1200px)
+  .container
+    columns: 3;
+    width: calc(100% - 40px);
+    box-sizing: border-box;
+
+@media (max-width: 768px)
+  .container
+    columns: 2;
+
+@media (max-width: 480px)
+  .container
+    columns: 1;

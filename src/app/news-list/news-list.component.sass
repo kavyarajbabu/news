@@ -1,0 +1,133 @@
+mat-chip-list
+  display: -webkit-box;
+
+mat-chip
+	cursor: pointer;
+
+mat-chip:hover
+  transform: scale(1.2);
+  transition: all 0.3s ease-in-out 0.1s;
+
+.example-card
+  min-width: 250px;
+  max-width: 550px;
+  margin-bottom: 5%;
+
+
+.trending
+  font-size: 40px;
+  color: darkred;
+
+.jumbotron
+  text-align: -webkit-center;
+
+.excard
+  max-width: 200px;
+  margin-bottom: 5%;
+  text-align: -webkit-center;
+  transition: all 0.3s ease-in-out 0.1s;
+
+.excard:hover
+  transform: scale(1.15);
+  transition: all 0.3s ease-in-out 0.1s;
+  cursor: pointer;
+  box-shadow: 0 8px 6px -6px #a51832;
+
+.smalldesc
+  padding: 2rem 1rem;
+
+.expandesc
+  padding: 2rem 1rem;
+
+.smalldesc .row
+  max-height: 380px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  justify-content: space-around;
+
+.expandesc .row
+  overflow: hidden;
+  justify-content: space-around;
+
+.lead2
+  margin-top: 5%;
+
+.mat-card-header
+  display: block;
+
+.expand-collapse
+  color: white;
+
+.icon-scroller
+  transition: all 0.3s ease-in-out 0.1s;
+  border-radius: 20px;
+  background-color: red;
+  color: white;
+
+.icon-scroller:hover
+  transform: scale(2);
+  cursor: pointer;
+  color: black;
+  transition: all 0.3s ease-in-out 0.1s;
+  background-color: white;
+
+
+
+body
+  margin: 0px;
+  padding: 0px;
+  background: #333;
+
+.container
+  width: 1200px;
+  margin: 20px auto;
+  columns: 4;
+  column-gap: 40px;
+
+.container .box
+  width: 100%;
+  margin: 0 0 20px;
+  padding: 10px;
+  background: #fff;
+  overflow: hidden;
+  break-inside: avoid;
+  border-radius: 20px;
+
+.box
+  transition: all 0.3s ease-in-out 0.1s;
+
+.box:hover
+  transform: scale(0.9);
+  transition: all 0.3s ease-in-out 0.1s;
+  cursor: pointer;
+  box-shadow: 0 8px 6px -6px #a51832;
+
+
+.container .box img
+  max-width: 100%;
+
+.container .box h2
+  margin: 10px 0 0;
+  padding: 0;
+  font-size: 20px;
+
+.container .box p
+  margin: 0;
+  padding: 0 0 10px;
+  font-size: 16px;
+
+@media (max-width: 1200px)
+  .container
+    columns: 3;
+    width: calc(100% - 40px);
+    box-sizing: border-box;
+
+@media (max-width: 768px)
+  .container
+    columns: 2;
+
+@media (max-width: 480px)
+  .container
+    columns: 1;
+
+

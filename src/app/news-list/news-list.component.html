@@ -1,0 +1,51 @@
+<nav class="navbar navbar-dark bg-primary justify-content-between">
+  <a class="navbar-brand" style="color:white">
+    <mat-icon svgIcon='NewsIcon'>
+
+    </mat-icon> News
+  </a>
+  <form class="form-inline">
+    <input class="form-control mr-sm-2" type="search" id='region_code' id='regionCode' name='region_code'
+      (input)='change()' [(ngModel)]="sourceCode" placeholder="Search Source" aria-label="Search">
+  </form>
+</nav>
+
+
+<!--  Change Scroll to be visible or not in SCSS line 44 of overflow : scroll / hidden -->
+
+<div class="jumbotron" [ngClass]="expand ? 'expandesc' : 'smalldesc'">
+    <h1 class="display-4">News Channels</h1>
+    <p class="lead">It's amazing that the amount of news that happens in the world every day always just exactly fits the newspaper. - Jerry Seinfeld</p>
+    <hr>
+    <div class="row">
+        <div class="container" *ngIf="sourcesList.length>0"  >
+            <div class="box" *ngFor="let item of sourcesList" (click)='gotoNews(item)'>
+              <mat-icon svgIcon='NewsIcon'>
+
+              </mat-icon>
+              <h2> <a [href]="item.url" target="blank"> {{ item.name }}   </a>  </h2>
+              <hr>
+              <h6>{{item.id | titlecase}} - ({{item.country | uppercase}})</h6>
+              <p>{{ item.description }}</p>
+            </div>
+          </div>
+          <div class="container" *ngIf="sourcesList.length==0">
+            <p class="lead">
+              No Sources to display
+            </p>
+          </div>
+    </div>
+
+    <p class="lead2" *ngIf="sourcesList.length>0">
+      <ng-container *ngIf="expand; else elseTemplate">
+        <mat-icon class="icon-scroller" (click)="expand = !expand">keyboard_arrow_up</mat-icon>
+      </ng-container>
+      <ng-template #elseTemplate>
+          <mat-icon class="icon-scroller" (click)="expand = !expand">keyboard_arrow_down</mat-icon>
+      </ng-template>
+
+    </p>
+  </div>
+
+
+
